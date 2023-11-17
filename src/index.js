@@ -3,7 +3,7 @@ import ExchangeRate from "./calculate";
 function getRate(currency, amount) {
   ExchangeRate.getRate(currency, amount)
     .then(function(response) {
-      if (response) {
+      if (response.ok) {
         const conversionRate = response.conversion_rates[currency];
         const newAmount = amount * conversionRate;
         printElements(newAmount.toFixed(2), currency);
@@ -17,8 +17,8 @@ function printElements(newAmount, currency) {
   document.querySelector('#showResponse').innerText = `New Amount: $${newAmount}, Currency: ${currency}`;
 }
 
-function printError(error, currency) {
-  document.querySelector('#showResponse').innerText = `Error: ${error}, Currency: ${currency}`;
+function printError(error) {
+  document.querySelector('#showResponse').innerText = `Failed Conversion: ${error}`;
 }
 
 function handleFormSubmission(event) {
