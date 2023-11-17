@@ -1,6 +1,6 @@
 export default class ExchangeRate {  
-  static getRate() {
-    return fetch(`https://v6.exchanm/v6/${process.env.API_KEY}/latest/USD`)
+  static async getRate() {
+    return fetch(` https://v6.exchangerate-api.com/v6/1f9b0da17a2a126b77eb68e1/latest/USD`)
       .then(function(response) {
         if (!response.ok) {
           throw new Error();

@@ -3,7 +3,7 @@ import ExchangeRate from "./calculate";
 function getRate(currency, amount) {
   ExchangeRate.getRate(currency, amount)
     .then(function(response) {
-      if (response.ok) {
+      if (response.result === 'success') {
         const conversionRate = response.conversion_rates[currency];
         const newAmount = amount * conversionRate;
         printElements(newAmount.toFixed(2), currency);
