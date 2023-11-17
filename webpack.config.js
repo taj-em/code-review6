@@ -23,7 +23,7 @@ module.exports = {
       verbose: true,
     }),
     new HtmlWebpackPlugin({
-      title: 'Shape Tracker',
+      title: 'code-review6',
       template: './src/index.html',
       inject: 'body',
     })
