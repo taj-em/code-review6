@@ -6,7 +6,7 @@ function getRate(currency, amount) {
       if (response) {
         const conversionRate = response.conversion_rates[currency];
         const newAmount = amount * conversionRate;
-        printElements(newAmount, currency);
+        printElements(newAmount.toFixed(2), currency);
       } else {
         printError(response);
       }
