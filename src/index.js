@@ -4,15 +4,17 @@ function getRate(currency, amount) {
   ExchangeRate.getRate(currency, amount)
     .then(function(response) {
       if (response) {
-        printElements(response, amount);
+        const conversionRate = response.conversion_rates[currency];
+        const newAmount = amount * conversionRate;
+        printElements(newAmount, currency);
       } else {
-        printError(response, currency);
+        printError(response);
       }
     });
 }
 
-function printElements(response, newAmount) {
-  document.querySelector('#showResponse').innerText = `"Response: ${response}, Converted Amount: ${newAmount}`;
+function printElements(newAmount, currency) {
+  document.querySelector('#showResponse').innerText = `New Amount: $${newAmount}, Currency: ${currency}`;
 }
 
 function printError(error, currency) {
