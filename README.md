@@ -2,7 +2,7 @@
 
 #### By _**Taj Empey**_
 
-#### _Converts currency from USD to CAD, EUR, AUD, CHF and GBP_
+#### _Converts currency from USD to CAD, EUR, AUD, CHF, GBP, JPY, CNY, HKD and NZD_
 
 ## Technologies Used
 
